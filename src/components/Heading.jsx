@@ -13,7 +13,8 @@ const Heading = styled.h1`
     props.as === 'h2' &&
     css`
       font-weight: 500;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      text-align: center;
     `}
 `;
 

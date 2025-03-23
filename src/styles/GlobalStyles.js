@@ -3,8 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
 :root {
   --color-primary: #128dcf;
+  --color-primary-dark: #1c76bf;
   --border-radius: 0.5rem;
-  --shadow: 0px 0.6rem 2.4rem rgba(0,0,0, 0.06);
+  --shadow: 0px 0.6rem 2.4rem rgba(0,0,0, 0.26);
   --backdrop-color: rgba(255,255,255,0.1);
 
   &, &.light-mode {
@@ -25,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: background-color 0.3s; //for dark mode
+  transition: 0.2s; 
 }
 body {
   font-family: 'Open Sans', sans-serif;
