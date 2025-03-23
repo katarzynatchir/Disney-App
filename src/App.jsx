@@ -1,14 +1,27 @@
+// import Heading from './components/Heading';
+import Logo from './components/Logo';
 import Main from './components/Main';
 import NavBar from './components/Navbar';
+import Switcher from './components/Switcher';
+import { DarkModeProvider } from './context/DarkModeContext';
 import GlobalStyles from './styles/GlobalStyles';
 
 function App() {
   return (
     <>
-      <GlobalStyles />
-      <NavBar></NavBar>
-
-      <Main></Main>
+      <DarkModeProvider>
+        <GlobalStyles />
+        <NavBar>
+          <Logo />
+          <Switcher />
+        </NavBar>
+        <Main>
+          <div>Lista postaci</div>
+          <div>Paginacja</div>
+          {/* <Heading as="h1">Myszka Mickie</Heading>
+        <Heading as="h2">Myszka Mickie</Heading> */}
+        </Main>
+      </DarkModeProvider>
     </>
   );
 }
