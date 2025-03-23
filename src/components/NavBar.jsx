@@ -7,8 +7,7 @@ const Nav = styled.nav`
   align-items: center;
   height: 4.2rem;
   padding: 0 2rem;
-  background-color: var(--color-background-light);
-  border-bottom: 2px solid var(--color-background-dark);
+  border-bottom: 1px solid var(--color-grey);
 `;
 
 const NavBar = ({ children }) => {

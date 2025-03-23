@@ -10,13 +10,13 @@ const GlobalStyles = createGlobalStyle`
   &, &.light-mode {
   --color-text: #333;
   --color-background: #f8f8f8;
-  --color-background-700: #1e1e1e;
+  --color-grey: #1e1e1e;
   }
 
   &.dark-mode {
   --color-text: #f8f8f8;
   --color-background: #1e1e1e;
-  --color-background-700: #e0e0e0;
+  --color-grey: #b2b2b2;
   }
 }
 *,

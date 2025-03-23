@@ -6,6 +6,8 @@ import Switcher from './components/Switcher';
 import { DarkModeProvider } from './context/DarkModeContext';
 import GlobalStyles from './styles/GlobalStyles';
 
+import DisneyCharacters from './components/DisneyCharacters';
+
 function App() {
   return (
     <>
@@ -16,7 +18,8 @@ function App() {
           <Switcher />
         </NavBar>
         <Main>
-          <div>Lista postaci</div>
+          <DisneyCharacters />
+
           <div>Paginacja</div>
           {/* <Heading as="h1">Myszka Mickie</Heading>
         <Heading as="h2">Myszka Mickie</Heading> */}
