@@ -6,14 +6,9 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <NavBar>
-        <div className="switcher">Switcher</div>
-      </NavBar>
+      <NavBar></NavBar>
 
-      <Main>
-        <div>CharakterList</div>
-        <div>Pagination</div>
-      </Main>
+      <Main></Main>
     </>
   );
 }
