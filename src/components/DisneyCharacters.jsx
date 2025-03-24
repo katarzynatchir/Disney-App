@@ -1,32 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import Loader from './Loader';
 import ErrorMessage from './ErrorMessage';
 import SingleCharacter from './SingleCharacter';
 import styled from 'styled-components';
+import Pagination from '@mui/material/Pagination';
 
-const URL = 'https://api.disneyapi.dev/character';
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.7rem;
+`;
 
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+`;
+
+const CustomPagination = styled(Pagination)`
+  & .MuiPaginationItem-root {
+    color: var(--color-grey-800);
+    background-color: var(--color-grey-200);
+  }
+
+  & .MuiPaginationItem-root.Mui-selected {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white-200);
+  }
+
+  & .MuiPaginationItem-root:hover {
+    background-color: var(--color-primary-light);
+  }
 `;
 
 const DisneyCharacters = () => {
-  const { data, isLoading, error } = useFetch(URL);
+  const [page, setPage] = useState(1);
+  const { data, isLoading, error, totalPages } = useFetch(page);
+  const handleSetPage = (e, value) => {
+    setPage(value);
+  };
 
   return (
-    <Container>
-      {isLoading && <Loader />}
-      {!isLoading &&
-        !error &&
-        data &&
-        data.data.map(character => <SingleCharacter character={character} />)}
-      {error && <ErrorMessage message={error} />}
-    </Container>
+    <Section>
+      <Container>
+        {isLoading && <Loader />}
+        {!isLoading && !error && data && <SingleCharacter characters={data} />}
+        {error && <ErrorMessage message={error} />}
+      </Container>
+      <CustomPagination count={totalPages} onChange={handleSetPage} />
+    </Section>
   );
 };
 

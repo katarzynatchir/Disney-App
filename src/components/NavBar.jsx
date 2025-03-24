@@ -7,7 +7,7 @@ const Nav = styled.nav`
   align-items: center;
   height: 4.2rem;
   padding: 0 2rem;
-  border-bottom: 1px solid var(--color-grey);
+  border-bottom: 1px solid var(--color-accent);
 `;
 
 const NavBar = ({ children }) => {
