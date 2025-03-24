@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-800: #424242;
   --border-radius: 0.5rem;
   --shadow: 0px 0.6rem 2.4rem rgba(0,0,0, 0.26);
-  --backdrop-color: rgba(255,255,255,0.1);
+
 
   &, &.light-mode {
   --color-text: #333;

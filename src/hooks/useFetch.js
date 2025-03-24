@@ -1,25 +1,19 @@
 import { useEffect, useState } from 'react';
 
-export const useFetch = (page = 1) => {
-  const [data, setData] = useState([]);
-  const [totalPages, setTotalPages] = useState(0);
-  const [count, setCount] = useState(0);
+export const useFetch = url => {
+  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  const URL = 'https://api.disneyapi.dev/character';
 
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch(`${URL}?page=${page}`);
+        const response = await fetch(url);
         if (!response.ok) throw new Error('Error during fetching data');
         const result = await response.json();
-        setData(result.data);
-        setTotalPages(result.info.totalPages);
-        setCount(result.info.count);
+        setData(result);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -27,7 +21,7 @@ export const useFetch = (page = 1) => {
       }
     };
     fetchData();
-  }, [page]);
+  }, [url]);
 
-  return { data, totalPages, count, isLoading, error };
+  return { data, isLoading, error };
 };

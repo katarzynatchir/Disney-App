@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { DarkModeContext } from '../context/DarkModeContext';
-import { styled as muiStyled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import { DarkModeContext } from '../../context/DarkModeContext';
+import { styled as muiStyled } from '@mui/material/styles';
 
 const SwitcherStyled = styled.div`
   display: flex;
@@ -74,11 +74,7 @@ const Switcher = () => {
     <SwitcherStyled>
       <FormControlLabel
         control={
-          <MaterialUISwitch
-            sx={{ m: 1 }}
-            checked={isDarkMode}
-            onChange={toggleDarkMode}
-          />
+          <MaterialUISwitch checked={isDarkMode} onChange={toggleDarkMode} />
         }
         label="Theme"
       />

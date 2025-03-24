@@ -1,11 +1,12 @@
 import React from 'react';
+import Heading from './Heading';
 
 const ErrorMessage = ({ message }) => {
   return (
-    <p className="error">
-      <span>🛑</span>
+    <Heading as="h2">
+      <span>🛑 </span>
       {message}
-    </p>
+    </Heading>
   );
 };
 

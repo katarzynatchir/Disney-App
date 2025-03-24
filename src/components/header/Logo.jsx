@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import Heading from './Heading';
 import styled from 'styled-components';
-import mickeyMouseDark from '../images/mickey-mouse.webp';
-import mickeyMouseWhite from '../images/mickey-mouse-white.webp';
-import { DarkModeContext } from '../context/DarkModeContext';
+import Heading from '../Heading';
+import mickeyMouseDark from '../../images/mickey-mouse.webp';
+import mickeyMouseWhite from '../../images/mickey-mouse-white.webp';
+import { DarkModeContext } from '../../context/DarkModeContext';
 
 const DivStyled = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ const Logo = () => {
     <DivStyled>
       <ImgStyled
         src={isDarkMode ? mickeyMouseWhite : mickeyMouseDark}
-        alt="Mickey Mouse"
+        alt="Logo"
       />
       <Heading as="h1">Disney App</Heading>
     </DivStyled>

@@ -1,10 +1,9 @@
-import Logo from './components/Logo';
-import Main from './components/Main';
-import NavBar from './components/Navbar';
-import Switcher from './components/Switcher';
 import GlobalStyles from './styles/GlobalStyles';
-import DisneyCharacters from './components/DisneyCharacters';
-// import Pagination from './components/Pagination';
+import Header from './components/header/Header';
+import Logo from './components/header/Logo';
+import Switcher from './components/header/Switcher';
+import Main from './components/Main';
+import DisneyCharacters from './components/characters/DisneyCharacters';
 import { DarkModeProvider } from './context/DarkModeContext';
 
 function App() {
@@ -12,13 +11,12 @@ function App() {
     <>
       <DarkModeProvider>
         <GlobalStyles />
-        <NavBar>
+        <Header>
           <Logo />
           <Switcher />
-        </NavBar>
+        </Header>
         <Main>
           <DisneyCharacters />
-          {/* <Pagination /> */}
         </Main>
       </DarkModeProvider>
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Nav = styled.nav`
+const Nav = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -10,8 +10,8 @@ const Nav = styled.nav`
   border-bottom: 1px solid var(--color-accent);
 `;
 
-const NavBar = ({ children }) => {
+const Header = ({ children }) => {
   return <Nav>{children}</Nav>;
 };
 
-export default NavBar;
+export default Header;
