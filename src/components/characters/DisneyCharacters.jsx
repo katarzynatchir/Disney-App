@@ -11,7 +11,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.7rem;
+  gap: 1.8rem;
 `;
 
 const Container = styled.div`
@@ -36,10 +36,10 @@ const DisneyCharacters = () => {
     <Section>
       <Container>
         {isLoading && <Loader />}
+        {error && <ErrorMessage message={error} />}
         {!isLoading && !error && data && (
           <SingleCharacter characters={characters} />
         )}
-        {error && <ErrorMessage message={error} />}
       </Container>
       <Paginate
         totalPages={totalPages}
